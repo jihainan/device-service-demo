@@ -1,3 +1,4 @@
+# configuration.toml
 [Writable]
 LogLevel = 'DEBUG'
 
@@ -57,7 +58,7 @@ File = "./device-mqtt.log"
 # Pre-define Devices
 [[DeviceList]]
   Name = "MQ_DEVICE"
-  Profile = "Test.Device.MQTT.Profile.one"
+  Profile = "Test.Device.MQTT.Profile"
   Description = "General MQTT device"
   Labels = [ "MQTT"]
   [DeviceList.Protocols]
@@ -68,7 +69,6 @@ File = "./device-mqtt.log"
        ClientId = "CommandPublisher"
        User = ""
        Password = ""
-
        Topic = "CommandTopic"
   [[DeviceList.AutoEvents]]
     Frequency = "30s"
