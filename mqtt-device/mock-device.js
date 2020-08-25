@@ -9,7 +9,7 @@ function getRandomFloat(min, max) {
 
 const deviceName = "MQ_DEVICE";
 let message = "test-message";
-var ADDRESS  = "tcp://10.11.24.148:1883";
+var ADDRESS  = "tcp://192.168.1.103:1883";
 var CLIENTID = "Mock-Device";
 var USERNAME = "admin";
 var PWD      = "public";
