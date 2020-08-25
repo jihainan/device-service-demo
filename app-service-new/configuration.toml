@@ -22,7 +22,7 @@
         FilterOut = "false"
     [Writable.Pipeline.Functions.HTTPPostJSON]
       [Writable.Pipeline.Functions.HTTPPostJSON.Parameters]
-        url = "http://localhost:7788/hello" # your target service path
+        url = "https://dabdd960-6928-4565-bb5e-cdba82e4b70c.mock.pstmn.io/hello" # your target service path
         persistOnError = "false"
         secretheadername = "" # This is the name used in the HTTP header and also used as the secret key
         secretpath = ""
