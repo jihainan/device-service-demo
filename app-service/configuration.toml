@@ -22,7 +22,7 @@
         FilterOut = "false"
     [Writable.Pipeline.Functions.HTTPPostJSON]
       [Writable.Pipeline.Functions.HTTPPostJSON.Parameters]
-        url = "http://localhost:7777/test" # your target service path
+        url = "http://localhost:7788/hello" # your target service path
         persistOnError = "false"
         secretheadername = "" # This is the name used in the HTTP header and also used as the secret key
         secretpath = ""
