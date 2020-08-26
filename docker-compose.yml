@@ -482,6 +482,38 @@ services:
     depends_on:
       - app-service-rules
 
+#################################################################
+# Application Service -- Http Export
+#################################################################
+
+  app-service-http-export:
+    image: edgexfoundry/docker-app-service-configurable:1.2.0
+    ports:
+      - "127.0.0.1:50003:50003"
+    container_name: edgex-app-service-configurable-http-export
+    hostname: edgex-app-service-configurable-http-export
+    networks:
+      - edgex-network
+    environment:
+      <<: *common-variables
+      EDGEX_SECURITY_SECRET_STORE: "false" # required since SecretStore not used and not configured
+      # edgex_profile: rules-engine
+      EDGEX_CONF_DIR: /custom-config
+      Service_Host: edgex-app-service-configurable-http-export
+      Service_Port: 50003
+      MessageBus_SubscribeHost_Host: edgex-core-data
+      Binding_PublishTopic: events
+      WRITABLE_PIPELINE_FUNCTIONS_HTTPPOSTJSON_PARAMETERS_URL: https://dabdd960-6928-4565-bb5e-cdba82e4b70c.mock.pstmn.io/hello
+    volumes:
+      - ./app-service-new:/custom-config
+    depends_on:
+      - consul
+#      - logging  # uncomment if re-enabled remote logging
+      - data
+      - vault-worker
+    # entrypoint:
+    #   - --confdir=./app-service
+
   # Support RulesEngine has been deprecated in the Geneva (1.2.0) release
   # If still required, simply uncomment the block below and comment out the block above.
   #
