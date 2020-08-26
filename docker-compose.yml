@@ -503,7 +503,7 @@ services:
       Service_Port: 50003
       MessageBus_SubscribeHost_Host: edgex-core-data
       Binding_PublishTopic: events
-      WRITABLE_PIPELINE_FUNCTIONS_HTTPPOSTJSON_PARAMETERS_URL: https://dabdd960-6928-4565-bb5e-cdba82e4b70c.mock.pstmn.io/hello
+      #WRITABLE_PIPELINE_FUNCTIONS_HTTPPOSTJSON_PARAMETERS_URL: http://10.11.24.148:7788/hello
     volumes:
       - ./app-service:/custom-config
     depends_on:

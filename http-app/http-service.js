@@ -4,7 +4,7 @@ const Hapi = require('hapi');
 
 // 创建一个服务监听7788端口
 const server = Hapi.server({
-    host: 'localhost',
+    host: '0.0.0.0',
     port: 7788
 });
 
